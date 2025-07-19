@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHaven - Discover Your Next Great Read</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <h1>BookHaven</h1>
+                </div>
+                
+                <nav class="header__nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="#home" class="nav__link">Home</a></li>
+                        <li><a href="#categories" class="nav__link">Categories</a></li>
+                        <li><a href="#featured" class="nav__link">Featured</a></li>
+                        <li><a href="#about" class="nav__link">About</a></li>
+                        <li><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search books, authors, or ISBN..." id="searchInput">
+                        <button class="search-btn" id="searchBtn">🔍</button>
+                    </div>
+                    
+                    <button class="cart-btn" id="cartBtn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <button class="user-btn">👤</button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title">Discover Your Next Great Read</h2>
+                <p class="hero__subtitle">Explore thousands of books across all genres</p>
+                <button class="btn btn--primary btn--lg" id="browseBtn">Browse Collection</button>
+            </div>
+            
+            <div class="hero__carousel">
+                <div class="carousel-container" id="featuredCarousel">
+                    <!-- Featured books will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="categories__header">
+                <h3>Browse by Category</h3>
+            </div>
+            <div class="categories__pills" id="categoryPills">
+                <button class="category-pill active" data-category="all">All</button>
+                <!-- Category pills will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Grid -->
+    <section class="books-grid" id="featured">
+        <div class="container">
+            <div class="books-grid__header">
+                <h3 id="sectionTitle">Featured Books</h3>
+                <div class="sort-options">
+                    <select class="form-control" id="sortSelect">
+                        <option value="default">Sort by</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Rating</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="books-grid__container" id="booksContainer">
+                <!-- Books will be inserted here -->
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No books found</h3>
+                <p>Try adjusting your search or category filter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Detail Modal -->
+    <div class="modal" id="bookModal">
+        <div class="modal__backdrop" id="modalBackdrop"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="modalClose">×</button>
+            <div class="book-detail" id="bookDetail">
+                <!-- Book details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar__header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-sidebar__close" id="cartClose">×</button>
+        </div>
+        
+        <div class="cart-sidebar__content" id="cartContent">
+            <div class="cart-empty" id="cartEmpty">
+                <p>Your cart is empty</p>
+                <button class="btn btn--secondary" id="continueShopping">Continue Shopping</button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be inserted here -->
+            </div>
+        </div>
+        
+        <div class="cart-sidebar__footer" id="cartFooter">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn--secondary" id="continueShoppingBtn">Continue Shopping</button>
+                <button class="btn btn--primary" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>BookHaven</h4>
+                    <p>Your trusted online bookstore since 2024</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Featured</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h5>Customer Service</h5>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" target="_blank">Facebook</a>
+                        <a href="#" target="_blank">Twitter</a>
+                        <a href="#" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 BookHaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
